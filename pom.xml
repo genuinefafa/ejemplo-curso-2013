@@ -4,8 +4,8 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
         >
     <modelVersion>4.0.0</modelVersion>
-    <groupId>foo</groupId>
-    <artifactId>curso</artifactId>
+    <groupId>capacitacion2013.ejemplos.cursos</groupId>
+    <artifactId>ejemplo-curso-2013-web</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring MVC Application</name>
@@ -136,11 +136,6 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${org.slf4j-version}</version>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${ch.qos.logback-version}</version>
         </dependency>
         <!-- @Inject -->
         <dependency>

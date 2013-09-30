@@ -1,9 +1,9 @@
 package foo.curso.alumno;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import foo.curso.account.AlumnoRepository;
 import foo.curso.entities.AccessAlumnoDAO;
 import foo.curso.entities.Alumno;
 import foo.curso.models.AlumnoForm;
@@ -19,14 +20,18 @@ import foo.curso.models.AlumnoForm;
 @RequestMapping(value="/alumno/**")
 public class AlumnoController {
 	
+	@Autowired
+	private AlumnoRepository alumnoRepository;
+	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public ModelAndView index(){
 		ModelAndView mav = new ModelAndView();
 		
-		ArrayList<Alumno> alumnos = AccessAlumnoDAO.getInstance().getAll();
+		// ArrayList<Alumno> alumnos = AccessAlumnoDAO.getInstance().getAll();
+		
 		
 		//obtener lista de alumnos
-		mav.getModelMap().addAttribute("alumnos", alumnos);
+		mav.getModelMap().addAttribute("alumnos", alumnoRepository.findAll());
 		
 		return mav;
 	}
@@ -39,7 +44,8 @@ public class AlumnoController {
 		calendario.set(Integer.parseInt(alumnoForm.getAño()), Integer.parseInt(alumnoForm.getMes())-1, Integer.parseInt(alumnoForm.getDia()));
 		Date nacimiento = calendario.getTime();*/
 		Alumno al = alumnoForm.crearAlumno();
-		AccessAlumnoDAO.getInstance().crear(al);
+		// AccessAlumnoDAO.getInstance().crear(al);
+		alumnoRepository.create(al);
 		System.out.println("el alumno creado tiene legajo = " + al.getLegajo());
 		
 		

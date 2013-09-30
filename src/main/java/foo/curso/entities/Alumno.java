@@ -2,11 +2,21 @@ package foo.curso.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Alumno {
 	private String nombre;
 	private String apellido;
+	
+	@Id
+	@GeneratedValue
 	private int legajo;
 	private Date nacimiento;
+	
+	public Alumno() {} 
 	
 	public Alumno(String nombre, String apellido, int legajo, Date nacimiento){
 		this.nombre = nombre;
