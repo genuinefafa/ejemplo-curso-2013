@@ -40,7 +40,7 @@ public class AlumnoController {
 		Date nacimiento = calendario.getTime();*/
 		Alumno al = alumnoForm.crearAlumno();
 		AccessAlumnoDAO.getInstance().crear(al);
-		
+		System.out.println("el alumno creado tiene legajo = " + al.getLegajo());
 		
 		
 		return mav;

@@ -151,6 +151,11 @@ public class AccessAlumnoDAO {
 			stmt.setString(2, unAlumno.getApellido());
 			stmt.setDate(3, new java.sql.Date(unAlumno.getNacimiento().getTime()));
 			stmt.executeUpdate();
+			
+			ResultSet rs = stmt.getGeneratedKeys();
+			if (rs.next()) {
+				unAlumno.setLegajo(rs.getInt(1));
+			}
 		}
 		catch(SQLException e){
 			e.printStackTrace();
