@@ -38,8 +38,8 @@ public class AlumnoController {
 		/*GregorianCalendar calendario = new GregorianCalendar();
 		calendario.set(Integer.parseInt(alumnoForm.getAño()), Integer.parseInt(alumnoForm.getMes())-1, Integer.parseInt(alumnoForm.getDia()));
 		Date nacimiento = calendario.getTime();*/
-		
-		AccessAlumnoDAO.getInstance().crear(alumnoForm.crearAlumno());
+		Alumno al = alumnoForm.crearAlumno();
+		AccessAlumnoDAO.getInstance().crear(al);
 		
 		
 		

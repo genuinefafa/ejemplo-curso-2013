@@ -10,7 +10,7 @@
 	<br />	
 	<input type="text" name="dia" placeholder="Dia" />
 	<input type="text" name="mes" placeholder="Mes" />
-	<input type="text" name="año" placeholder="Año" />
+	<input type="text" name="ano" placeholder="Año" />
 	<button>Submit</button>
 </form>
 <table class="table">
