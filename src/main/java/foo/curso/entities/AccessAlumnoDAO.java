@@ -1,4 +1,4 @@
-package foo.curso.alumno;
+package foo.curso.entities;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,6 @@ import java.util.Date;
 import javax.sql.DataSource;
 
 import com.jolbox.bonecp.BoneCPDataSource;
-
-import foo.curso.entities.Alumno;
 
 public class AccessAlumnoDAO {
 	private DataSource ds;
